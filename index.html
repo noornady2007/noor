@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NOUR NADY - منصة التعلم</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/data_sdk.js"></script>
-  <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
   <style>
         body { box-sizing: border-box; }
@@ -193,8 +191,7 @@
   <style>@view-transition { navigation: auto; }</style>
  </head>
  <body class="h-full gradient-bg text-white overflow-auto">
-  <div id="app" class="min-h-full"><!-- Landing Page -->
-   <div id="landing-page" class="min-h-full flex flex-col">
+  <div id="app" class="min-h-full"><div id="landing-page" class="min-h-full flex flex-col">
     <nav class="glass-card p-4 flex justify-between items-center sticky top-0 z-40">
      <div class="flex items-center gap-3">
       <div class="w-12 h-12 rounded-full shimmer-btn flex items-center justify-center float-animation"><span class="text-2xl">📚</span>
@@ -215,8 +212,7 @@
       </div>
      </div>
     </main>
-   </div><!-- Student Register Page -->
-   <div id="register-page" class="min-h-full flex items-center justify-center p-8 hidden">
+   </div><div id="register-page" class="min-h-full flex items-center justify-center p-8 hidden">
     <div class="glass-card rounded-2xl p-8 w-full max-w-md neon-border slide-in"><button onclick="showPage('landing-page')" class="mb-4 text-gray-400 hover:text-white transition-all">← رجوع</button>
      <div class="text-center mb-6">
       <div class="text-5xl mb-3 bounce-in">
@@ -237,8 +233,7 @@
      </form>
      <p class="text-center text-gray-400 mt-4">لديك حساب؟ <button onclick="showPage('login-page')" class="text-indigo-400 hover:underline">سجل دخول</button></p>
     </div>
-   </div><!-- Student Login Page -->
-   <div id="login-page" class="min-h-full flex items-center justify-center p-8 hidden">
+   </div><div id="login-page" class="min-h-full flex items-center justify-center p-8 hidden">
     <div class="glass-card rounded-2xl p-8 w-full max-w-md neon-border slide-in"><button onclick="showPage('landing-page')" class="mb-4 text-gray-400 hover:text-white transition-all">← رجوع</button>
      <div class="text-center mb-6">
       <div class="text-5xl mb-3 bounce-in">
@@ -257,8 +252,7 @@
      </form>
      <p class="text-center text-gray-400 mt-4">ليس لديك حساب؟ <button onclick="showPage('register-page')" class="text-indigo-400 hover:underline">سجل الآن</button></p>
     </div>
-   </div><!-- Admin Login Page -->
-   <div id="admin-login" class="min-h-full flex items-center justify-center p-8 hidden">
+   </div><div id="admin-login" class="min-h-full flex items-center justify-center p-8 hidden">
     <div class="glass-card rounded-2xl p-8 w-full max-w-md neon-border slide-in"><button onclick="showPage('landing-page')" class="mb-4 text-gray-400 hover:text-white transition-all">← رجوع</button>
      <div class="text-center mb-6">
       <div class="text-5xl mb-3 bounce-in rotate-gear">
@@ -276,8 +270,7 @@
       </div><button type="submit" class="w-full py-3 rounded-lg shimmer-btn font-bold hover:scale-105 transition-all">دخول لوحة التحكم 🛡️</button>
      </form>
     </div>
-   </div><!-- Student Dashboard -->
-   <div id="student-dashboard" class="min-h-full hidden">
+   </div><div id="student-dashboard" class="min-h-full hidden">
     <nav class="glass-card p-4 flex justify-between items-center sticky top-0 z-40">
      <div class="flex items-center gap-3">
       <div class="w-10 h-10 rounded-full shimmer-btn flex items-center justify-center float-animation">
@@ -290,28 +283,24 @@
     </nav>
     <div class="p-6">
      <div class="flex gap-4 mb-6 flex-wrap"><button onclick="showStudentTab('courses')" class="student-tab px-6 py-3 rounded-lg shimmer-btn font-bold transition-all hover:scale-105" data-tab="courses">📖 الكورسات</button> <button onclick="showStudentTab('exams')" class="student-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="exams">📝 الامتحانات</button> <button onclick="showStudentTab('results')" class="student-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="results">📊 نتائجي</button>
-     </div><!-- Courses Tab -->
-     <div id="courses-tab" class="student-content">
+     </div><div id="courses-tab" class="student-content">
       <h2 class="text-2xl font-bold mb-4">📖 الكورسات المتاحة</h2>
       <div id="courses-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
        <p class="text-gray-400 col-span-full text-center py-8">جاري تحميل الكورسات...</p>
       </div>
-     </div><!-- Exams Tab -->
-     <div id="exams-tab" class="student-content hidden">
+     </div><div id="exams-tab" class="student-content hidden">
       <h2 class="text-2xl font-bold mb-4">📝 الامتحانات المتاحة</h2>
       <div id="exams-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
        <p class="text-gray-400 col-span-full text-center py-8">جاري تحميل الامتحانات...</p>
       </div>
-     </div><!-- Results Tab -->
-     <div id="results-tab" class="student-content hidden">
+     </div><div id="results-tab" class="student-content hidden">
       <h2 class="text-2xl font-bold mb-4">📊 نتائجي</h2>
       <div id="results-list" class="space-y-4">
        <p class="text-gray-400 text-center py-8">لا توجد نتائج بعد</p>
       </div>
      </div>
     </div>
-   </div><!-- Video Player Modal -->
-   <div id="video-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
+   </div><div id="video-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
     <div class="glass-card rounded-2xl p-6 w-full max-w-4xl neon-border slide-in">
      <div class="flex justify-between items-center mb-4">
       <h3 id="video-title" class="text-xl font-bold"></h3><button onclick="closeVideo()" class="text-2xl hover:text-red-400 transition-all">✕</button>
@@ -319,16 +308,14 @@
      <div class="aspect-video bg-black rounded-lg overflow-hidden"><iframe id="video-frame" class="w-full h-full" allowfullscreen></iframe>
      </div>
     </div>
-   </div><!-- Exam Modal -->
-   <div id="exam-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50 overflow-auto">
+   </div><div id="exam-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50 overflow-auto">
     <div class="glass-card rounded-2xl p-6 w-full max-w-2xl neon-border my-8 slide-in">
      <div class="flex justify-between items-center mb-4">
       <h3 id="exam-title" class="text-xl font-bold"></h3><button onclick="closeExam()" class="text-2xl hover:text-red-400 transition-all">✕</button>
      </div>
      <div id="exam-questions" class="space-y-6"></div><button id="submit-exam-btn" onclick="submitExam()" class="w-full mt-6 py-3 rounded-lg shimmer-btn font-bold hover:scale-105 transition-all">تسليم الامتحان ✅</button>
     </div>
-   </div><!-- Result Modal -->
-   <div id="result-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
+   </div><div id="result-modal" class="fixed inset-0 bg-black/80 flex items-center justify-center p-4 hidden z-50">
     <div class="glass-card rounded-2xl p-8 w-full max-w-md neon-border result-card">
      <div class="text-center">
       <div id="result-icon" class="text-7xl mb-4"></div>
@@ -340,8 +327,7 @@
       </div><button onclick="closeResult()" class="w-full px-6 py-3 rounded-lg shimmer-btn font-bold hover:scale-105 transition-all">العودة للامتحانات</button>
      </div>
     </div>
-   </div><!-- Admin Dashboard -->
-   <div id="admin-dashboard" class="min-h-full hidden">
+   </div><div id="admin-dashboard" class="min-h-full hidden">
     <nav class="admin-nav p-4 flex justify-between items-center sticky top-0 z-40">
      <div class="flex items-center gap-3">
       <div class="w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center scale-pulse">
@@ -357,8 +343,7 @@
       </div><button onclick="logout()" class="px-4 py-2 rounded-lg glass-card hover:bg-red-500/20 transition-all hover:scale-105">خروج</button>
      </div>
     </nav>
-    <div class="p-6"><!-- Stats -->
-     <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+    <div class="p-6"><div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
       <div class="glass-card rounded-xl p-4 text-center slide-in hover:scale-105 transition-all cursor-pointer hover:bg-white/10">
        <div class="text-3xl mb-2">
         👥
@@ -403,26 +388,21 @@
         امتحانات مكتملة
        </div>
       </div>
-     </div><!-- Tabs -->
-     <div class="flex gap-4 mb-6 flex-wrap overflow-x-auto"><button onclick="showAdminTab('requests')" class="admin-tab px-6 py-3 rounded-lg shimmer-btn font-bold transition-all hover:scale-105" data-tab="requests">📩 طلبات التسجيل</button> <button onclick="showAdminTab('students')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="students">👥 الطلاب</button> <button onclick="showAdminTab('manage-courses')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="manage-courses">📚 إدارة الكورسات</button> <button onclick="showAdminTab('manage-exams')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="manage-exams">📝 إدارة الامتحانات</button> <button onclick="showAdminTab('results')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="results">📊 النتائج</button>
-     </div><!-- Requests Tab -->
-     <div id="requests-tab" class="admin-content">
+     </div><div class="flex gap-4 mb-6 flex-wrap overflow-x-auto"><button onclick="showAdminTab('requests')" class="admin-tab px-6 py-3 rounded-lg shimmer-btn font-bold transition-all hover:scale-105" data-tab="requests">📩 طلبات التسجيل</button> <button onclick="showAdminTab('students')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="students">👥 الطلاب</button> <button onclick="showAdminTab('manage-courses')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="manage-courses">📚 إدارة الكورسات</button> <button onclick="showAdminTab('manage-exams')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="manage-exams">📝 إدارة الامتحانات</button> <button onclick="showAdminTab('results')" class="admin-tab px-6 py-3 rounded-lg glass-card font-bold hover:bg-white/10 transition-all hover:scale-105" data-tab="results">📊 النتائج</button>
+     </div><div id="requests-tab" class="admin-content">
       <h2 class="text-2xl font-bold mb-4">📩 طلبات التسجيل الجديدة</h2>
       <div id="requests-list" class="space-y-4">
        <p class="text-gray-400 text-center py-8">لا توجد طلبات جديدة</p>
       </div>
-     </div><!-- Students Tab -->
-     <div id="students-tab" class="admin-content hidden">
+     </div><div id="students-tab" class="admin-content hidden">
       <h2 class="text-2xl font-bold mb-4">👥 قائمة الطلاب المسجلين</h2>
       <div id="students-list" class="space-y-4">
        <p class="text-gray-400 text-center py-8">لا يوجد طلاب مسجلين</p>
       </div>
-     </div><!-- Manage Courses Tab -->
-     <div id="manage-courses-tab" class="admin-content hidden">
+     </div><div id="manage-courses-tab" class="admin-content hidden">
       <div class="flex justify-between items-center mb-4">
        <h2 class="text-2xl font-bold">📚 إدارة الكورسات</h2><button onclick="showAddCourseForm()" class="px-4 py-2 rounded-lg shimmer-btn font-bold hover:scale-105 transition-all">+ إضافة كورس</button>
-      </div><!-- Add Course Form -->
-      <div id="add-course-form" class="glass-card rounded-xl p-6 mb-6 hidden neon-border">
+      </div><div id="add-course-form" class="glass-card rounded-xl p-6 mb-6 hidden neon-border">
        <h3 class="text-xl font-bold mb-4">إضافة كورس جديد</h3>
        <form id="course-form" class="space-y-4"><input type="hidden" id="edit-course-id">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -442,12 +422,10 @@
       <div id="admin-courses-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
        <p class="text-gray-400 col-span-full text-center py-8">لا توجد كورسات</p>
       </div>
-     </div><!-- Manage Exams Tab -->
-     <div id="manage-exams-tab" class="admin-content hidden">
+     </div><div id="manage-exams-tab" class="admin-content hidden">
       <div class="flex justify-between items-center mb-4">
        <h2 class="text-2xl font-bold">📝 إدارة الامتحانات</h2><button onclick="showAddExamForm()" class="px-4 py-2 rounded-lg shimmer-btn font-bold hover:scale-105 transition-all">+ إضافة امتحان</button>
-      </div><!-- Add Exam Form -->
-      <div id="add-exam-form" class="glass-card rounded-xl p-6 mb-6 hidden neon-border">
+      </div><div id="add-exam-form" class="glass-card rounded-xl p-6 mb-6 hidden neon-border">
        <h3 class="text-xl font-bold mb-4">إضافة امتحان جديد</h3>
        <form id="exam-form" class="space-y-4"><input type="hidden" id="edit-exam-id">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -471,8 +449,7 @@
       <div id="admin-exams-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
        <p class="text-gray-400 col-span-full text-center py-8">لا توجد امتحانات</p>
       </div>
-     </div><!-- Results Tab -->
-     <div id="results-tab" class="admin-content hidden">
+     </div><div id="results-tab" class="admin-content hidden">
       <h2 class="text-2xl font-bold mb-4">📊 نتائج الطلاب</h2>
       <div id="results-admin-list" class="space-y-4">
        <p class="text-gray-400 text-center py-8">لا توجد نتائج بعد</p>
@@ -483,6 +460,85 @@
   </div>
   <div id="toast-container"></div>
   <script>
+        // --- IMPROVED DATABASE SYSTEM (LOCALSTORAGE) ---
+        // This replaces the missing external SDKs
+        
+        const DB_KEY = 'nour_nady_db';
+        
+        // Mocking the Data SDK to use LocalStorage
+        window.dataSdk = {
+            listeners: [],
+            
+            init: async function(handler) {
+                this.listeners.push(handler);
+                const data = this._loadData();
+                handler.onDataChanged(data);
+                return { isOk: true };
+            },
+            
+            create: async function(item) {
+                const data = this._loadData();
+                item.__backendId = 'id_' + Date.now() + Math.random().toString(36).substr(2, 9);
+                data.push(item);
+                this._saveData(data);
+                this._notify();
+                return { isOk: true };
+            },
+            
+            update: async function(item) {
+                const data = this._loadData();
+                const index = data.findIndex(d => d.__backendId === item.__backendId);
+                if (index !== -1) {
+                    data[index] = item;
+                    this._saveData(data);
+                    this._notify();
+                    return { isOk: true };
+                }
+                return { isOk: false };
+            },
+            
+            delete: async function(item) {
+                let data = this._loadData();
+                const initialLength = data.length;
+                data = data.filter(d => d.__backendId !== item.__backendId);
+                if (data.length !== initialLength) {
+                    this._saveData(data);
+                    this._notify();
+                    return { isOk: true };
+                }
+                return { isOk: false };
+            },
+            
+            _loadData: function() {
+                try {
+                    return JSON.parse(localStorage.getItem(DB_KEY) || '[]');
+                } catch(e) {
+                    return [];
+                }
+            },
+            
+            _saveData: function(data) {
+                localStorage.setItem(DB_KEY, JSON.stringify(data));
+            },
+            
+            _notify: function() {
+                const data = this._loadData();
+                this.listeners.forEach(l => l.onDataChanged(data));
+            }
+        };
+
+        // Mocking Element SDK to prevent errors
+        window.elementSdk = {
+            init: function(config) {
+                // Just run the config change immediately
+                if(config && config.onConfigChange) {
+                    config.onConfigChange(config.defaultConfig);
+                }
+            }
+        };
+
+        // --- ORIGINAL APP LOGIC BELOW ---
+
         // Global State
         let allData = [];
         let currentUser = null;
@@ -1380,5 +1436,5 @@
         
         init();
     </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c8b68e2063307ea',t:'MTc3MDIyMTEyOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ </body>
 </html>
